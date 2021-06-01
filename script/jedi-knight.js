@@ -1,3 +1,4 @@
+
 /**
  * Class JediKnight -> Jedi
  * @param{String} typeofKight
@@ -5,51 +6,49 @@
  * @param{Number} experiance
  */
 
- function JediKnight(
-   name,
-   amountOFMDCL,
-   fear,
-   rage,
-   kindness,
-   typeofKight,
-   hasPadavan,
-   experiance
-   ) {
-     Jedi.call(this, name, amountOFMDCL, fear, rage, kindness);
-     this._typeofKight = typeofKight;
-     this._hasPadavan = hasPadavan;
-     this._experiance = experiance;
-   }
-   
-   JediKnight.prototype = Object.create(Jedi.prototype);
-   JediKnight.prototype.constructor = JediKnight;
+ class JediKnight extends Jedi {
+  constructor(
+    name,
+    amountOFMDCL,
+    fear,
+    rage,
+    kindness,
+    typeofKight,
+    hasPadavan,
+    experiance
+  ) {
+      super(name, amountOFMDCL, fear, rage, kindness);
+      this._typeofKight = typeofKight;
+      this._hasPadavan = hasPadavan;
+      this._experiance = experiance;
+    }
+
+  getTypeofKight() {
+    return this._typeofKight;
+  }
+
+  getHasPadavan() {
+    return this._hasPadavan;
+  }
+
+  setHasPadavan(hasPadavan) {
+    this._hasPadavan = hasPadavan;
+  }
+
+  getExperiance() {
+    return this._experiance;
+  }
+
+  setExperiance(experiance) {
+    this._experiance = experiance;
+  }
+
+  canBeMagister() {
+    if (this._experiance > 5000) {
+      return true;
+    } else {
+      return false;
+    }
+  }
+}
  
- JediKnight.prototype.getTypeofKight = function () {
-   return this._typeofKight;
- };
- 
- JediKnight.prototype.getHasPadavan = function () {
-   return this._hasPadavan;
- };
- 
- JediKnight.prototype.setHasPadavan = function (hasPadavan) {
-   this._hasPadavan = hasPadavan;
- };
- 
- JediKnight.prototype.getExperiance = function () {
-   return this._experiance;
- };
- 
- JediKnight.prototype.setExperiance = function (experiance) {
-   this._experiance = experiance;
- };
- 
- JediKnight.prototype.canBeMagister = function () {
-   if (this._experiance > 5000) {
-     return true;
-   } else {
-     return false;
-   }
- };
- 
-  

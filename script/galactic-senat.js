@@ -1,4 +1,3 @@
-
 /**
  * Class GalacticSenat
  * @param {String} name 
@@ -6,36 +5,38 @@
  * @param {String} leaderName 
  */
 
- function GalacticSenat(name, locationOfHQ, leaderName) {
-	this._name = name;
-	this._locationOfHQ = locationOfHQ;
-	this._leaderName = leaderName;
- }
+ class GalacticSenat {
+   constructor(name, locationOfHQ, leaderName) {
+      this._name = name;
+      this._locationOfHQ = locationOfHQ;
+      this._leaderName = leaderName;
+   }
 
- GalacticSenat.prototype.getName = function () {
-	return this._name;
- };
- 
- GalacticSenat.prototype.setName = function (name) {
-	this._name = name;
- };
+   getName() {
+      return this._name;
+   }
 
- GalacticSenat.prototype.getLocationOfHQ = function () {
-	return this._locationOfHQ;
- };
- 
- GalacticSenat.prototype.setLocationOfHQ = function (locationOfHQ) {
-	this._locationOfHQ = locationOfHQ;
- };
- 
- GalacticSenat.prototype.getLeaderName = function () {
-	return this._leaderName;
- };
- 
- GalacticSenat.prototype.setLeaderName = function (leaderName) {
-	this._leaderName = leaderName;
- };
+   setName(name) {
+      this._name = name;
+   }
 
- GalacticSenat.prototype.requestHelp = function (jediOrder) {
-	return "We should ask " + jediOrder.getName() + " to help us!";
- };
+   getLocationOfHQ() {
+      return this._locationOfHQ;
+   }
+
+   setLocationOfHQ(locationOfHQ) {
+      this._locationOfHQ = locationOfHQ;
+   }
+
+   getLeaderName() {
+      return this._leaderName;
+   }
+
+   setLeaderName(leaderName) {
+      this._leaderName = leaderName;
+   }
+
+   requestHelp(jediOrder) {
+      return `We should ask ${jediOrder.getName()} to help us!`;
+   }
+}

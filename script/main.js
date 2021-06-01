@@ -1,4 +1,4 @@
-var obivanKenoby = new JediKnight(
+const obivanKenoby = new JediKnight(
   "Obivan Kenoby",
   550,
   4,
@@ -8,7 +8,7 @@ var obivanKenoby = new JediKnight(
   true,
   6000
 );
-var enakinSkywalker = new JediKnight(
+const enakinSkywalker = new JediKnight(
   "Enakin Skywalker",
   950,
   3,
@@ -18,7 +18,7 @@ var enakinSkywalker = new JediKnight(
   false,
   1500
 );
-var maceWindu = new JediKnight(
+const maceWindu = new JediKnight(
   "Mace Windu",
   650,
   4,
@@ -28,8 +28,8 @@ var maceWindu = new JediKnight(
   true,
   6000
 );
-var yoda = new JediKnight("Yoda", 1250, 5, 0, 4, "consular", false, 120000);
-var lukeSkywalker = new JediKnight(
+const yoda = new JediKnight("Yoda", 1250, 5, 0, 4, "consular", false, 120000);
+const lukeSkywalker = new JediKnight(
   "Luke Skywalker",
   950,
   3,
@@ -39,8 +39,8 @@ var lukeSkywalker = new JediKnight(
   false,
   6000
 );
-var ploKun = new JediKnight("Plo Koon", 650, 4, 3, 4, "sentinel", true, 6000);
-var ahsokaTano = new JediKnight(
+const ploKun = new JediKnight("Plo Koon", 650, 4, 3, 4, "sentinel", true, 6000);
+const ahsokaTano = new JediKnight(
   "Ahsoka Tano",
   450,
   3,
@@ -50,7 +50,7 @@ var ahsokaTano = new JediKnight(
   false,
   3000
 );
-var quiGon = new JediKnight(
+const quiGon = new JediKnight(
   "Qui-Gon Jinn",
   750,
   5,
@@ -60,7 +60,7 @@ var quiGon = new JediKnight(
   true,
   8000
 );
-var kitFisto = new JediKnight(
+const kitFisto = new JediKnight(
   "Kit Fisto",
   550,
   3,
@@ -70,7 +70,7 @@ var kitFisto = new JediKnight(
   false,
   5500
 );
-var kiAdiMundi = new JediKnight(
+const kiAdiMundi = new JediKnight(
   "Ki-Adi-Mundi",
   550,
   3,
@@ -81,9 +81,9 @@ var kiAdiMundi = new JediKnight(
   5500
 );
 
-var prostoVasia = new JediKnight("Vasia", 5, 3, 1, 2, "sentinel", false, 5);
+const prostoVasia = new JediKnight("Vasia", 5, 3, 1, 2, "sentinel", false, 5);
 
-var jSquad = [
+const jSquad = [
   obivanKenoby,
   yoda,
   enakinSkywalker,
@@ -96,9 +96,11 @@ var jSquad = [
   kiAdiMundi,
 ];
 
-var jediOrder = new JediOrder("Order of New Republick", true, true);
+const jediOrder = new JediOrder("Order of New Republick", true, true);
 console.dir(jediOrder);
 
-jSquad.forEach(function(element) {
+jSquad.forEach(element => {
   jediOrder.devoteJedi(element);
 });
+
+  
