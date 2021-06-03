@@ -13,27 +13,27 @@ class Jedi extends ForceUser {
     this._kindness = kindness;
   }
 
-  getFear() {
+  get fear() {
     return this._fear;
   }
 
-  setFear(fear) {
+  set fear(fear) {
     this._fear = fear;
   }
 
-  getRage() {
+  get rage() {
     return this._rage;
   }
 
-  setRage(rage) {
+  set rage(rage) {
     this._rage = rage;
   }
 
-  getKindness() {
+  get kindness() {
     return this._kindness;
   }
 
-  setKindness(kindness) {
+  set kindness(kindness) {
     this._kindness = kindness;
   }
 

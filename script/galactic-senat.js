@@ -12,31 +12,31 @@
       this._leaderName = leaderName;
    }
 
-   getName() {
+   get name() {
       return this._name;
    }
 
-   setName(name) {
+   set name(name) {
       this._name = name;
    }
 
-   getLocationOfHQ() {
+   get locationOfHQ() {
       return this._locationOfHQ;
    }
 
-   setLocationOfHQ(locationOfHQ) {
+   set locationOfHQ(locationOfHQ) {
       this._locationOfHQ = locationOfHQ;
    }
 
-   getLeaderName() {
+   get leaderName() {
       return this._leaderName;
    }
 
-   setLeaderName(leaderName) {
+   set leaderName(leaderName) {
       this._leaderName = leaderName;
    }
 
    requestHelp(jediOrder) {
-      return `We should ask ${jediOrder.getName()} to help us!`;
+      return `We should ask ${jediOrder.name} to help us!`;
    }
 }

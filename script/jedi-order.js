@@ -5,7 +5,7 @@
  * @param {Boolean} hasAcademy
  */
 
- class JediOrder {
+class JediOrder {
   constructor(name, inWarWithSith, hasAcademy) {
     this._name = name;
     this._inWarWithSith = inWarWithSith;
@@ -13,41 +13,45 @@
     this._jediList = [];
   }
 
-  getName() {
+  get name() {
     return this._name;
   }
 
-  setName(name) {
+  set name(name) {
     this._name = name;
   }
 
-  getinWarWithSith() {
+  get inWarWithSith() {
     return this._fear;
   }
 
-  setinWarWithSith(fear) {
+  set inWarWithSith(fear) {
     this._fear = fear;
   }
 
-  getHasAcademy() {
+  get hasAcademy() {
     return this._fear;
   }
 
-  setHasAcademy(hasAcademy) {
+  set hasAcademy(hasAcademy) {
     this._hasAcademy = hasAcademy;
   }
 
-  getJediList() {
+  get jediList() {
     return this._jediList;
   }
 
   getJediWithPadavan() {
-    const JediWithPadavanArr = this._jediList.filter(jedi => jedi.getHasPadavan());
-    return JediWithPadavanArr;
+    const jediWithPadavanArr = this._jediList.filter((jedi) =>
+      jedi.hasPadavan
+    );
+    return jediWithPadavanArr;
   }
 
   getJediByType(type) {
-    const currentTypeOfJediArr = this._jediList.filter(jedi => jedi.getTypeofKight() === type);
+    const currentTypeOfJediArr = this._jediList.filter(
+      (jedi) => jedi.typeofKight === type
+    );
     return currentTypeOfJediArr;
   }
 
@@ -64,16 +68,17 @@
   }
 
   order66(cb) {
+    const atack = () => {
+      this._jediList.pop();
+      console.log(this.jediList);
+      if (this._jediList.length >= 4) {
+        setTimeout(atack, 999);
+      } else {
+        cb();
+      }
+    };
     setTimeout(
-      function atack() {
-        this._jediList.pop();
-        // console.log(this.getJediList());
-        if (this._jediList.length >= 4) {
-          setTimeout(atack.bind(this), 999);
-         } else {
-          cb();
-        }
-      }.bind(this),
+      atack,
       999
     );
   }

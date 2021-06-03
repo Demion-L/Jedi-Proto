@@ -23,23 +23,23 @@
       this._experiance = experiance;
     }
 
-  getTypeofKight() {
+  get typeofKight() {
     return this._typeofKight;
   }
 
-  getHasPadavan() {
+  get hasPadavan() {
     return this._hasPadavan;
   }
 
-  setHasPadavan(hasPadavan) {
+  set hasPadavan(hasPadavan) {
     this._hasPadavan = hasPadavan;
   }
 
-  getExperiance() {
+  get experiance() {
     return this._experiance;
   }
 
-  setExperiance(experiance) {
+  set experiance(experiance) {
     this._experiance = experiance;
   }
 

@@ -9,17 +9,14 @@
     this._name = name;
     this._amountOFMDCL = amountOFMDCL;
   }
+    get name() {
+      return this._name;
+    }
+    set name(name) {
+      this._name = name;
+    }
 
-  getName() {
-    return this._name;
+    get amountOFMDCL() {
+      return this._amountOFMDCL;
+    }
   }
-
-  setName(name) {
-    this._name = name;
-  }
-
-  getAmountOFMDCL() {
-    return this._amountOFMDCL;
-  }
-}
- 
