@@ -82,6 +82,11 @@ const kiAdiMundi = new JediKnight(
 );
 
 const prostoVasia = new JediKnight("Vasia", 5, 3, 1, 2, "sentinel", false, 5);
+const prostoMaks = new JediKnight("Maks", 5, 3, 1, 2, "sentinel", false, 5);
+const prostoDima = new JediKnight("Dima", 5, 3, 1, 2, "sentinel", false, 5);
+const prostoVadim = new JediKnight("Vadim", 5, 3, 1, 2, "sentinel", false, 5);
+const prostoPasha = new JediKnight("Pasha", 5, 3, 1, 2, "sentinel", false, 5);
+const prostoSveta = new JediKnight("Sveta", 5, 3, 1, 2, "sentinel", false, 5);
 
 const jSquad = [
   obivanKenoby,
@@ -91,16 +96,45 @@ const jSquad = [
   lukeSkywalker,
   ploKun,
   ahsokaTano,
-  quiGon,
-  kitFisto,
-  kiAdiMundi,
 ];
 
-const jediOrder = new JediOrder("Order of New Republick", true, true);
-console.dir(jediOrder);
+const jSquad2 = [quiGon, kitFisto, kiAdiMundi, prostoVasia];
 
-jSquad.forEach(element => {
+const jSquad3 = [];
+
+const jediOrder = new JediOrder("Order of New Republick", true, true);
+
+
+jSquad.forEach((element) => {
   jediOrder.devoteJedi(element);
 });
 
-  
+// jediOrder.order66()
+// .then((data) => {
+//   console.log(data);
+// })
+// .catch((error) => console.warn(error));
+
+let asyncJediOrder = async (newSquad, ...order) => {
+  try {
+    const survivors = await jediOrder.order66();
+    console.log(survivors);
+
+    const inforcment = (newSquad) => {
+      newSquad.forEach(element => {
+        survivors.push(element);
+      });
+      return survivors;
+    };  
+    const newOrder = inforcment(newSquad).reverse();
+    console.log(newOrder);
+    
+    const nextRound = await jediOrder.order66(newOrder);
+       console.dir(nextRound);
+       
+ 
+  } catch (error) {
+    console.error(error);
+  }
+};
+asyncJediOrder(jSquad2);
