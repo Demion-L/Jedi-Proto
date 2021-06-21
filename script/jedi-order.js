@@ -22,15 +22,15 @@ class JediOrder {
   }
 
   get inWarWithSith() {
-    return this._fear;
+    return this._inWarWithSith;
   }
 
-  set inWarWithSith(fear) {
-    this._fear = fear;
+  set inWarWithSith(inWarWithSith) {
+    this._inWarWithSith = inWarWithSith;
   }
 
   get hasAcademy() {
-    return this._fear;
+    return this._hasAcademy;
   }
 
   set hasAcademy(hasAcademy) {
